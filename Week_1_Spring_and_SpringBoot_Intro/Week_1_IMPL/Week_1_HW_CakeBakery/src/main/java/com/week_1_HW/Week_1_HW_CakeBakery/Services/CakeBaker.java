@@ -5,9 +5,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class CakeBaker {
 
-	private Syrup syrup;
+	private final Syrup syrup;
 
-	private Frosting frosting;
+	private final Frosting frosting;
 
 	CakeBaker(Syrup syrup, Frosting frosting){
 		this.syrup = syrup;
@@ -15,6 +15,9 @@ public class CakeBaker {
 	}
 
 	public void bakeCake(){
-		System.out.println("Baking cake for Chocolate and Strawberry flavors");
+		System.out.println("For baking cake we are ");
+		syrup.getSyrupType();
+		System.out.print(" and ");
+		frosting.getFrostingType();
 	}
 }

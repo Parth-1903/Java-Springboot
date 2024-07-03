@@ -1,11 +1,9 @@
 package com.week_1_HW.Week_1_HW_CakeBakery.Services;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
-public class Syrup implements SyrupInterface{
-	@Override
-	public void getSyrupType() {
-		System.out.println("Getting Syrup");
-	}
+@Repository
+public interface Syrup {
+
+	public void getSyrupType();
 }
