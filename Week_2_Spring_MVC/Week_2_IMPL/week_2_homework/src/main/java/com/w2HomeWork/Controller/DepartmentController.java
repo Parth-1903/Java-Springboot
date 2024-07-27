@@ -39,7 +39,7 @@ public class DepartmentController {
 	}
 
 	@DeleteMapping("{id}")
-	public ApiResponse<Object> deleteDepartment(@PathVariable("id") Long id){
+	public ApiResponse<Object> deleteDepartment(@PathVariable(name="id") Long id){
 		departmentService.deleteDepartmentById(id);
 		return new ApiResponse<>(HttpStatus.ACCEPTED,"Successfully Deleted User with ID: " +id);
 	}

@@ -77,7 +77,6 @@ public class DepartmentService {
 			department = departmentRepository.findById(id).get();
 			updates.forEach((key,value) -> {
 				Field field = ReflectionUtils.findRequiredField(Department.class, key);
-
 				field.setAccessible(true);
 				ReflectionUtils.setField(field,department,value);
 			});
