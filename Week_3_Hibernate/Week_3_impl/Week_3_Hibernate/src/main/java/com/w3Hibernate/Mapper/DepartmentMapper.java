@@ -6,9 +6,11 @@ import org.mapstruct.*;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", nullValueMappingStrategy = NullValueMappingStrategy.RETURN_DEFAULT, nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+@Mapper(componentModel = "spring",
+		nullValueMappingStrategy = NullValueMappingStrategy.RETURN_DEFAULT,
+		nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS,
+		nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 public interface DepartmentMapper {
-
 
 	Department toEntity(DepartmentDto departmentDto);
 

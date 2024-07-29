@@ -18,5 +18,4 @@ public class EmployeeDto {
 	private String name;
 
 	private List<ProjectDto> projects;
-
 }
