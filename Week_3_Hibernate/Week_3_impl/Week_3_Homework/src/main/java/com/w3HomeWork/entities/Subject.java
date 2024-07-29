@@ -24,11 +24,9 @@ public class Subject {
 	private String title;
 
 	@ManyToOne
-	@JsonIgnore
 	private Professor professor;
 
 	@ManyToMany(mappedBy = "subjects")
-	@JsonIgnore
 	private Set<Student> students;
 
 	@Override

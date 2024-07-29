@@ -24,7 +24,6 @@ public class Professor {
 	private String title;
 
 	@OneToMany(mappedBy = "professor",cascade = CascadeType.ALL)
-	@JsonIgnore
 	private Set<Subject> subjects;
 
 	@ManyToMany
@@ -33,7 +32,6 @@ public class Professor {
 			joinColumns = @JoinColumn(name = "professor_id"),
 			inverseJoinColumns = @JoinColumn(name = "student_id")
 	)
-	@JsonIgnore
 	private Set<Student> students;
 
 	@Override

@@ -29,16 +29,14 @@ public class Student {
 	private AdmissionRecord admissionRecord;
 
 	@ManyToMany(mappedBy = "students")
-	@JsonIgnore
 	private Set<Professor> professors;
 
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(
 			name = "student_subject_mapping",
 			joinColumns = @JoinColumn(name = "student_id"),
 			inverseJoinColumns = @JoinColumn(name = "subject_id")
 	)
-	@JsonIgnore
 	private Set<Subject> subjects;
 
 	@Override

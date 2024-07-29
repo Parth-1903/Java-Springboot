@@ -1,6 +1,5 @@
 package com.w3HomeWork.Mapper;
 
-
 import com.w3HomeWork.dto.SubjectDto;
 import com.w3HomeWork.entities.Subject;
 import org.mapstruct.*;
@@ -15,9 +14,10 @@ import java.util.List;
 )
 public interface SubjectMapper {
 
-
+	@Mapping(target = "professor", ignore = true) // Ignore professor field
 	Subject toEntity(SubjectDto subjectDto);
-	@Mapping(target = "professor.subjects", ignore = true)
+
+	@Mapping(target = "professor", ignore = true) // Ignore professor field
 	SubjectDto toSubjectDto(Subject subject);
 
 	Subject mergeSubject(SubjectDto subjectDto, @MappingTarget Subject subject);
