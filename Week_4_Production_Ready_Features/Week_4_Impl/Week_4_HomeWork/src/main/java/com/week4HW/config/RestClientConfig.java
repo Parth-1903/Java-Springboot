@@ -21,16 +21,13 @@ public class RestClientConfig {
 	@Value("${currencyConverter.base.url}")
 	private String BASE_URL;
 
-	@Value("${currencyConverter.apiKey}")
-	private String API_KEY;
-
 	private final ObjectMapper objectMapper;
 
 	@Bean
 	@Qualifier("currencyConvertRestClient")
 	RestClient getCurrencyServiceRestClient() {
 		return RestClient.builder()
-				.baseUrl(BASE_URL) // Base URL without query parameters
+				.baseUrl(BASE_URL)
 				.defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
 				.defaultStatusHandler(HttpStatusCode::is5xxServerError, (req, res) -> {
 					throw new RuntimeException("Server error occurred");
@@ -38,12 +35,13 @@ public class RestClientConfig {
 				.build();
 	}
 
+	//This will only work with the commented line of the CurrencyClientImpl
 
 //	@Bean
 //	@Qualifier("currencyConvertRestClient")
 //	RestClient getCurrencyServiceRestClient() {
 //		return RestClient.builder()
-//				.baseUrl(BASE_URL) // Base URL without query parameters
+//				.baseUrl(BASE_URL+"?apikey="+API_KEY)
 //				.defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
 //				.defaultStatusHandler(HttpStatusCode::is5xxServerError, (req, res) -> {
 //					throw new RuntimeException("Server error occurred");

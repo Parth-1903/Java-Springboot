@@ -24,43 +24,13 @@ public class CurrencyClientImpl implements CurrencyClient {
 
 	private final ObjectMapper objectMapper;
 
-//	@Override
-//	public DataDto getCurrency(CurrencyDto currencyDto) {
-//		try{
-//			Object object = restClient.get()
-//					.uri("&currencies="+currencyDto.getConvertType()+"&base_currency="+currencyDto.getCurrencyType())
-//					.retrieve()
-//					.body(new ParameterizedTypeReference<Object>() {
-//					});
-//
-//			 try{
-//				 String jsonResponse = objectMapper.writeValueAsString(object);
-//				 return objectMapper.readValue(jsonResponse, DataDto.class);
-//			 }catch(JsonMappingException jsonMappingException){
-//				 try{
-//					 String jsonResponse = objectMapper.writeValueAsString(object);
-//					 ErrorResponseDto errorResponseDto = objectMapper.readValue(jsonResponse, ErrorResponseDto.class);
-//					 throw new ResourceNotFoundException("Error Fetching currency data: "+errorResponseDto.getErrors());
-//				 }catch (Exception e){
-//					 e.printStackTrace();
-//				 }
-//			 }
-//		}catch (Exception e){
-//			e.printStackTrace();
-//		}
-//		return null;
-//	}
-
-//	//You can do this as well
-
-
 	@Value("${currencyConverter.apiKey}")
 	private String API_KEY;
 	@Override
 	public DataDto getCurrency(CurrencyDto currencyDto) {
 		try {
-			String url = String.format("?apikey=%s&currencies=%s&base_currency=%s",
-					API_KEY, currencyDto.getConvertType(), currencyDto.getCurrencyType());
+			String url = String.format("?apikey="+API_KEY+"&currencies=%s&base_currency=%s",
+					 currencyDto.getConvertType(), currencyDto.getCurrencyType());
 
 			Object object = restClient.get()
 					.uri(url) // Relative path to the base URL
@@ -80,4 +50,35 @@ public class CurrencyClientImpl implements CurrencyClient {
 			throw new ResourceNotFoundException("Error Fetching currency data: " + e.getMessage());
 		}
 	}
+
+
+	//This will only work with the commented line of the RestClientConfig
+
+
+//	@Value("${currencyConverter.apiKey}")
+//	private String API_KEY;
+//	@Override
+//	public DataDto getCurrency(CurrencyDto currencyDto) {
+//		try {
+//			String url = String.format("?currencies=%s&base_currency=%s",
+//					currencyDto.getConvertType(), currencyDto.getCurrencyType());
+//
+//			Object object = restClient.get()
+//					.uri(url) // Relative path to the base URL
+//					.retrieve()
+//					.body(new ParameterizedTypeReference<Map<String, Object>>() {});
+//
+//			String jsonResponse = objectMapper.writeValueAsString(object);
+//
+//			DataDto dataDto = objectMapper.readValue(jsonResponse, DataDto.class);
+//
+//			return dataDto;
+//		} catch (JsonMappingException e) {
+//			e.printStackTrace();
+//			throw new ResourceNotFoundException("Error Fetching currency data: " + e.getMessage());
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			throw new ResourceNotFoundException("Error Fetching currency data: " + e.getMessage());
+//		}
+//	}
 }
