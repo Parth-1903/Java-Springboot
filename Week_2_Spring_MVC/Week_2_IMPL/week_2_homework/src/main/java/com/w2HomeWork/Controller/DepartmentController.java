@@ -13,7 +13,7 @@ import java.util.Map;
 
 @Data
 @RestController
-@RequestMapping("v1/department")
+@RequestMapping("/v1/department")
 public class DepartmentController {
 
 	private final DepartmentService departmentService;

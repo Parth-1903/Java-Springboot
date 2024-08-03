@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "ef0c7d7a-19dc-4d7f-884d-7944026ededd",
+		"name": "Week_4_Prod_Ready_Feature",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28657014"
+	},
+	"item": [
+		{
+			"name": "Week_4_Homework",
+			"item": [
+				{
+					"name": "Insert_Currency",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"currency_value\":1.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8097/v1/currency?baseCurrency=USD&targetCurrency=INR",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"v1",
+								"currency"
+							],
+							"query": [
+								{
+									"key": "baseCurrency",
+									"value": "USD"
+								},
+								{
+									"key": "targetCurrency",
+									"value": "INR"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_All_Currency",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8097/v1/currency/all",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"v1",
+								"currency",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET_All_Posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8096/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "8096",
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST_Create_Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"title1\",\r\n    \"description\":\"Description of Title1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8096/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "8096",
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_Post_By_Id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "PUT_Update_Post_By_Id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"title2\",\r\n    \"description\":\"Description of Title2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8096/posts/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8096",
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auditing_Envers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8096/audit/post/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8096",
+					"path": [
+						"audit",
+						"post",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
