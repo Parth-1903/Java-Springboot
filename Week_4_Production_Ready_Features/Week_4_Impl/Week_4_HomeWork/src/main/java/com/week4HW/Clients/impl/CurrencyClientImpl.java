@@ -29,11 +29,17 @@ public class CurrencyClientImpl implements CurrencyClient {
 	@Override
 	public DataDto getCurrency(CurrencyDto currencyDto) {
 		try {
-			String url = String.format("?apikey="+API_KEY+"&currencies=%s&base_currency=%s",
-					 currencyDto.getConvertType(), currencyDto.getCurrencyType());
+//			String url = String.format("?apikey="+API_KEY+"&currencies=%s&base_currency=%s",
+//					 currencyDto.getConvertType(), currencyDto.getCurrencyType());
 
 			Object object = restClient.get()
-					.uri(url) // Relative path to the base URL
+					.uri(uriBuilder ->
+						uriBuilder
+//								.path("v1/latest")
+								.queryParam("currencies",currencyDto.getConvertType())
+								.queryParam("base_currency",currencyDto.getCurrencyType())
+								.build())
+					.header("apikey",API_KEY)
 					.retrieve()
 					.body(new ParameterizedTypeReference<Map<String, Object>>() {});
 
