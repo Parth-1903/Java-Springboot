@@ -3,6 +3,7 @@ package com.uber.services;
 import com.uber.dto.RideRequestDto;
 import com.uber.entities.Driver;
 import com.uber.entities.Ride;
+import com.uber.entities.Rider;
 import com.uber.entities.enums.RideStatus;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -20,7 +21,5 @@ public interface RideService {
 	Page<Ride> getAllRidesOfRider(Long riderId, PageRequest pageRequest);
 
 	Page<Ride> getAllRidesOfDriver(Long driverId, PageRequest pageRequest);
-
-
 
 }

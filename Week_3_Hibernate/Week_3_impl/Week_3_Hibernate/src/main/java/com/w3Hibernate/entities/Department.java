@@ -2,12 +2,7 @@ package com.w3Hibernate.entities;
 
 import java.util.Set;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,7 +24,7 @@ public class Department {
 	@OneToOne
 	private Employee manager;
 
-	@OneToMany(mappedBy = "workerDepartment",orphanRemoval = true)
+	@OneToMany(mappedBy = "workerDepartment",fetch = FetchType.LAZY,orphanRemoval = true)
 	private Set<Employee> workers;
 
 }

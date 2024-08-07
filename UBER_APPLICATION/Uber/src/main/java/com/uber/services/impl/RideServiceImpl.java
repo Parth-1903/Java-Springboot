@@ -3,6 +3,7 @@ package com.uber.services.impl;
 import com.uber.dto.RideRequestDto;
 import com.uber.entities.Driver;
 import com.uber.entities.Ride;
+import com.uber.entities.Rider;
 import com.uber.entities.enums.RideStatus;
 import com.uber.services.RideService;
 import org.springframework.data.domain.Page;

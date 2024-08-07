@@ -8,6 +8,7 @@ import com.w3Hibernate.entities.Employee;
 import com.w3Hibernate.entities.Project;
 import com.w3Hibernate.repositories.EmployeeRepository;
 import com.w3Hibernate.repositories.ProjectRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +35,7 @@ public class EmployeeService {
 		return optionalDepartment.map(employeeMapper::toEmployeeDto).orElse(null);
 	}
 
+	@Transactional
 	public List<EmployeeDto> getAllEmployees(){
 		List<Employee> allEmployee = employeeRepository.findAll();
 

@@ -1,6 +1,7 @@
 package com.uber.controllers;
 
 import com.uber.dto.RideRequestDto;
+import com.uber.entities.RideRequest;
 import com.uber.services.RiderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -10,17 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/rider")
+@RequestMapping("/v1/riders")
 @RequiredArgsConstructor
 public class RiderController {
 
 	private final RiderService riderService;
 	@PostMapping("/requestRide")
 	public ResponseEntity<RideRequestDto> requestRide(@RequestBody RideRequestDto rideRequestDto){
-//		return ResponseEntity.ok(riderService.requestRide(rideRequestDto));
-		return null;
+		return ResponseEntity.ok(riderService.requestRide(rideRequestDto));
 	}
-
-
-
 }
