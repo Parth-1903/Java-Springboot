@@ -1,0 +1,501 @@
+{
+	"info": {
+		"_postman_id": "40a8f375-a1e3-491c-9109-e35c64420a41",
+		"name": "Week_3_Class_Work_&_Home_Work",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28657014"
+	},
+	"item": [
+		{
+			"name": "ClassWork",
+			"item": [
+				{
+					"name": "Department_Class_Work",
+					"item": [
+						{
+							"name": "Post_Department",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"CSE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8094/v1/department",
+									"host": [
+										"localhost"
+									],
+									"port": "8094",
+									"path": [
+										"v1",
+										"department"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Department",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8094/v1/department/all",
+									"host": [
+										"localhost"
+									],
+									"port": "8094",
+									"path": [
+										"v1",
+										"department",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Department_By_Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8094/v1/department/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8094",
+									"path": [
+										"v1",
+										"department",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Put_setting_Department_with_employee_by_id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "localhost:8094/v1/department/1/employee/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8094",
+									"path": [
+										"v1",
+										"department",
+										"1",
+										"employee",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Put_Setting_worker_in_department",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "localhost:8094/v1/department/1/worker/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8094",
+									"path": [
+										"v1",
+										"department",
+										"1",
+										"worker",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Employee_Class_Work",
+					"item": [
+						{
+							"name": "Post_Employee",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"Parth\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8094/v1/employee",
+									"host": [
+										"localhost"
+									],
+									"port": "8094",
+									"path": [
+										"v1",
+										"employee"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Employee",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8094/v1/employee/all",
+									"host": [
+										"localhost"
+									],
+									"port": "8094",
+									"path": [
+										"v1",
+										"employee",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Employee_By_Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8094/v1/employee/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8094",
+									"path": [
+										"v1",
+										"employee",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Put_Project_to_Employee",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "localhost:8094/v1/employee/1/project/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8094",
+									"path": [
+										"v1",
+										"employee",
+										"1",
+										"project",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Project_Class_Work",
+					"item": [
+						{
+							"name": "Get_Project_By_Id",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Get_All_Project",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8094/v1/project/all",
+									"host": [
+										"localhost"
+									],
+									"port": "8094",
+									"path": [
+										"v1",
+										"project",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "HomeWork",
+			"item": [
+				{
+					"name": "Professor",
+					"item": [
+						{
+							"name": "Post_Create_Prfoessor",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"Hello\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8095/v1/professor",
+									"host": [
+										"localhost"
+									],
+									"port": "8095",
+									"path": [
+										"v1",
+										"professor"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get_All_Professor",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Put_Assign_Subjects_To_Professor",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "localhost:8095/v1/professor/1/subject/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8095",
+									"path": [
+										"v1",
+										"professor",
+										"1",
+										"subject",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Put_Assign_Students_To_Professor",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "localhost:8095/v1/professor/1/subject/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8095",
+									"path": [
+										"v1",
+										"professor",
+										"1",
+										"subject",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Student",
+					"item": [
+						{
+							"name": "Post_Create_Student",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"student_name\":\"parth\",\r\n    \"class_name\":11\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8095/v1/student",
+									"host": [
+										"localhost"
+									],
+									"port": "8095",
+									"path": [
+										"v1",
+										"student"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get_All_Students",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Subject",
+					"item": [
+						{
+							"name": "Post_Create_Subject",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"Maths\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8095/v1/subject",
+									"host": [
+										"localhost"
+									],
+									"port": "8095",
+									"path": [
+										"v1",
+										"subject"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get_All_Subject",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Admission",
+					"item": [
+						{
+							"name": "Post_Create_Admission",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"className\":12,\r\n    \"fees\":60000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8095/v1/admission",
+									"host": [
+										"localhost"
+									],
+									"port": "8095",
+									"path": [
+										"v1",
+										"admission"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get_All_Admisson_details",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8095/v1/admission/all",
+									"host": [
+										"localhost"
+									],
+									"port": "8095",
+									"path": [
+										"v1",
+										"admission",
+										"all"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
